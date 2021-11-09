@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from 'C:/Users/java001/Desktop/myapp/react/node_modules/@umijs/runtime';
-import { renderClient } from 'C:/Users/java001/Desktop/myapp/react/node_modules/@umijs/renderer-react';
+import { ApplyPluginsType } from '/Users/dxh/Desktop/spacesengineer/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/dxh/Desktop/spacesengineer/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/routes';
 
 
@@ -37,7 +37,7 @@ export default clientRender();
 
 
     window.g_umi = {
-      version: '3.5.19',
+      version: '3.5.20',
     };
   
 

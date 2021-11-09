@@ -1,64 +1,58 @@
-import React from "react"
-
-
 class MyPromise {
-  static padding = "padding"
-  static resolve = "resolve"
-  static reject = "reject"
+  static padding = 'padding';
+  static reslove = 'reslove';
+  static reject = 'reject';
 
-  constructor(executor) {
-    this.value = undefined
-    this.resaon = undefined
-    this.status = MyPromise.padding
-    this.callback = []
-    executor(this._resolve.bind(this), this._reject.bind(this))
+  constructor(excal) {
+    this.callback = [];
+    this.value = undefined;
+    this.reason = undefined;
+    this.status = MyPromise.padding;
+    excal(this._resolve.bind(this), this._reject.bind(this));
   }
 
   _resolve(value) {
     if (value instanceof MyPromise) {
-      value.then(this._resolve.bind(this), this._reject.bind(this))
-      return
+      value.then(this._resolve.bind(this), this._reject.bind(this));
+      return;
     }
-    this.value = value
-    this.status = MyPromise.resolve
-    this.callback.forEach(cb => {
-      this._handler(cb)
+    this.value = value;
+    this.status = MyPromise.reslove;
+    this.callback.forEach((cb) => {
+      this._handler(cb);
     });
   }
-  _reject(resaon) {
-    if (resaon instanceof MyPromise) {
-      resaon.then(this._resolve.bind(this), this._reject.bind(this))
-      return
+  _reject(reason) {
+    if (reason instanceof MyPromise) {
+      reason.then(this._resolve.bind(this), this._reject.bind(this));
+      return;
     }
-    this.resaon = resaon
-    this.status = MyPromise.reject
-    this.callback.forEach(cb => {
-      this._handler(cb)
-    })
+    this.reason = reason;
+    this.status = MyPromise.reject;
+    this.callback.forEach((cb) => {
+      this._handler(cb);
+    });
   }
   _handler(callback) {
-    const { onResolve, onReject, nextResolve, nextReject } = callback
-    if (this.status === MyPromise.padding) {
-      this.callback.push(callback)
-      return
+    const { onReslove, onReject, nextReslove, nextReject } = callback;
+    if (this.status === 'padding') {
+      this.callback.push(callback);
+      return;
     }
-    if (this.status === MyPromise.resolve) {
-      const nextValue = onResolve ? onResolve(this.value) : this.value
-      nextResolve(nextValue)
-      return
+    if (this.status === 'reslove') {
+      const nextValue = onReslove ? onReslove(this.value) : this.value;
+      nextReslove(nextValue);
+      return;
     }
-    if (this.status === MyPromise.reject) {
-      const nextResaon = onReject ? onReject(this.resaon) : this.resaon
-      nextReject(nextResaon)
-      return
+    if (this.status === 'reject') {
+      const nextReason = onReject ? onReject(this.reason) : this.reason;
+      nextReject(nextReason);
+      return;
     }
   }
-
-  then(onResolve, onReject) {
-    return new MyPromise((nextResolve, nextReject) => {
-      this._handler({
-        onResolve, onReject, nextResolve, nextReject
-      })
-    })
+  then(onReslove, onReject) {
+    return new MyPromise((nextReslove, nextReject) => {
+      this._handler({ onReslove, onReject, nextReslove, nextReject });
+    });
   }
 }

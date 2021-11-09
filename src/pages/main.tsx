@@ -1,39 +1,33 @@
 import { Layout, Menu, Breadcrumb } from 'antd';
-import React, { useEffect, useState } from "react"
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom"
-import Routers from "../route"
+import React, { useEffect, useState } from 'react';
+import {
+  UserOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+} from '@ant-design/icons';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Routers from '../route';
 import './index.less';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-interface Props {
-}
+interface Props {}
 
 export default function IndexPage(props: Props) {
-  // const TokenKey = 'x-access-token'
-  // const [isShow, setIsShow] = useState(false)
-  // useEffect(() => {
-  //   if (!Cookies.get(TokenKey)) {
-  //     window.location.href = 'http://localhost:8000/user'
-  //   } else {
-  //     setIsShow(true)
-  //   }
-  // }, [])
   return (
     <Router>
       <Layout>
         <Header className="header">
-          <div className="logo" >太空计划</div>
-          {/* <Menu className="menu" theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
-        </Menu> */}
+          <div className="logo">太空计划</div>
         </Header>
-        <Layout className='content'>
+        <Layout className="content">
           <Sider width={200} className="site-layout-background">
             <Menu
               mode="inline"
@@ -53,7 +47,11 @@ export default function IndexPage(props: Props) {
                 <Menu.Item key="7">option7</Menu.Item>
                 <Menu.Item key="8">option8</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub3" icon={<NotificationOutlined />} title="计划三">
+              <SubMenu
+                key="sub3"
+                icon={<NotificationOutlined />}
+                title="计划三"
+              >
                 <Menu.Item key="9">option9</Menu.Item>
                 <Menu.Item key="10">option10</Menu.Item>
                 <Menu.Item key="11">option11</Menu.Item>
@@ -76,11 +74,15 @@ export default function IndexPage(props: Props) {
               }}
             >
               <Switch>
-                {
-                  Routers.map((item, index) => {
-                    return <Route key={index} path={item.path} render={() => <item.component />} />
-                  })
-                }
+                {Routers.map((item, index) => {
+                  return (
+                    <Route
+                      key={index}
+                      path={item.path}
+                      render={() => <item.component />}
+                    />
+                  );
+                })}
               </Switch>
             </Content>
           </Layout>
