@@ -266,6 +266,7 @@ antd?: {
 dark?: boolean
 compact?: boolean
 mobile?: boolean
+disableBabelPluginImport?: boolean
 config?: {
 
 }

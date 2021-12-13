@@ -1,12 +1,12 @@
 // @ts-nocheck
 import { plugin } from './plugin';
-import * as Plugin_0 from '/Users/dxh/Desktop/spacesengineer/src/app.tsx';
+import * as Plugin_0 from 'C:/Users/feng/Desktop/2/spacesengineer/src/app.tsx';
 import * as Plugin_1 from '../plugin-initial-state/runtime';
 import * as Plugin_2 from '../plugin-model/runtime';
 
   plugin.register({
     apply: Plugin_0,
-    path: '/Users/dxh/Desktop/spacesengineer/src/app.tsx',
+    path: 'C:/Users/feng/Desktop/2/spacesengineer/src/app.tsx',
   });
   plugin.register({
     apply: Plugin_1,

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory, History } from '/Users/dxh/Desktop/spacesengineer/node_modules/@umijs/runtime';
+import { createBrowserHistory, History } from 'C:/Users/feng/Desktop/2/spacesengineer/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/"

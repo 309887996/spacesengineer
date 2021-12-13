@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/dxh/Desktop/spacesengineer/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/dxh/Desktop/spacesengineer/node_modules/@umijs/renderer-react';
+import { ApplyPluginsType } from 'C:/Users/feng/Desktop/2/spacesengineer/node_modules/@umijs/runtime';
+import { renderClient } from 'C:/Users/feng/Desktop/2/spacesengineer/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/routes';
 
 

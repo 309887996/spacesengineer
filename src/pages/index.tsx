@@ -24,7 +24,7 @@ export default function MainPage(props: Props) {
   useEffect(() => {
     console.log(props);
     if (!Cookies.get(TokenKey)) {
-      props.history.push('/user');
+      props.history.push('/');
     }
   }, []);
   return (
