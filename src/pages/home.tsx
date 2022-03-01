@@ -1,6 +1,10 @@
-import React from "react"
+import React from 'react';
+import './home.less';
 
 export default function HomePage() {
-
-  return <div>1111</div>
+  return (
+    <div className="a">
+      1111<span className="iconfont icon-anticon-shengchanjihua"></span>
+    </div>
+  );
 }
